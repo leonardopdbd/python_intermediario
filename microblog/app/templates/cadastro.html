@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Cadastro</h1>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="text" name="foto" placeholder="URL da foto de perfil" required>
+        <textarea name="bio" placeholder="Escreva uma breve bio" required></textarea>
+        <button type="submit">Cadastrar</button>
+    </form>
+{% endblock %}

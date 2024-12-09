@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Bem-vindo ao Microblog</h1>
+    {% if current_user.is_authenticated %}
+        <p>Foto de perfil: <img src="{{ current_user.foto }}" alt="Foto de perfil"></p>
+        <p>Bio: {{ current_user.bio }}</p>
+        <h2>Últimos Posts</h2>
+        {% for post in posts %}
+            <div>
+                <p>{{ post.body }}</p>
+                <small>Postado por {{ post.author.username }} em {{ post.timestamp }}</small>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Faça login para ver os posts.</p>
+    {% endif %}
+{% endblock %}
